@@ -3,7 +3,6 @@
 * [Basic Syntax](basic_syntax.md)
 * [Working with Files](working_with_files.md)
 * [Modules](modules.md)
-* [Working with Files](working_with_files.md)
 * [Collections](collections.md)
 * [Functions](functions.md)
 * [Generators](generators.md)
