@@ -126,7 +126,6 @@ print(ord("A"))  # get unicode position
 
 for c in "Hello":  # iterate character by character
     pass  # pass does nothing
-
 ```
 
 You can also use `"""` to create multiline strings
@@ -138,7 +137,9 @@ in an error.
 Gladly, there are some workarounds on how to format your strings:
 
 #### F-Strings (preferred method)
-\mintinline{python}{f"Python {101}"}
+```python
+f"Python {101}"
+```
 
 #### Making everything a string}
 ```python

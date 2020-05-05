@@ -1,0 +1,22 @@
+{
+  "name": "introduction-to-python",
+  "version": "1.0.0",
+  "description": "## Who's the Target Audience of This Guide?",
+  "scripts": {
+    "dev": "docsify serve docs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/koenigscode/introduction-to-python.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/koenigscode/introduction-to-python/issues"
+  },
+  "homepage": "https://github.com/koenigscode/introduction-to-python#readme",
+  "devDependencies": {
+    "docsify": "^4.11.3"
+  }
+}
