@@ -3,10 +3,10 @@
 ## If/Else \& For In
 
 ```python
-for i in range(10):
+for i in range(10): # iterate over range object
     if i % 2 == 0:
         print(i)
-    elif False:
+    elif False: # else if
         # this condition is never reached
         pass  # pass does nothing
     else:
@@ -35,10 +35,6 @@ if 1 < 2 < 3:
     print('chaining conditions works!')
 ```
 
-```
-chaining conditions works!
-```
-
 ### Ternary Operator (Inline If/Else)
 
 The ternary operator works like in other languages, however, you're not using special
@@ -47,16 +43,13 @@ characters like `?` or `:` but the keywords `if` and `else`
 ```python
 some_condition = True
 x = 1 if some_condition else 0
-print(x)
-```
-
-```
-1
+print(x) # prints 1
 ```
 
 Note that, however, `x = 1 if some_condition` is not valid; you need an `else` statement.
 
 ## Reading From Command Line
+
 You can get some input from the command line using the
 `input` function:
 
@@ -71,6 +64,7 @@ Hello Michael!
 ```
 
 ## Comments
+
 Single line comments start with a `#`, docstrings ('multiline comments') comments start and end with `"""`.
 However, you should use `#` for 'normal' comments and `"""` for docstrings (e.g. explaining the purpose of a class or function).
 
@@ -89,7 +83,9 @@ multiline string using triple "
 ```
 
 ## Data Types
+
 Python basically has the following data types:
+
 - Integer
 - Float
 - Complex Number
@@ -105,11 +101,13 @@ It also features collections like sets and dictionaries by default, see [Collect
 ## Strings
 
 ### Creation
+
 You can create a string using either single or double quotes;
 it doesn't matter, which one you choose, just be consistent and
 stick to one style.
 
 ### String Operations
+
 ```python
 x = 'some string'
 x = "some string"
@@ -131,43 +129,29 @@ for c in "Hello":  # iterate character by character
 You can also use `"""` to create multiline strings
 
 ### String Formatting
+
 Concatenating strings with numbers `"Python " + 101` results
 in an error.
 
 Gladly, there are some workarounds on how to format your strings:
 
-#### F-Strings (preferred method)
-```python
-f"Python {101}"
-```
 
-#### Making everything a string}
-```python
-"Python" + str(101)
-```
-
-#### Modulo Operator
-```python
-"Python %s" % (101)
-```
-
-Calculating \texttt{string \% tuple} works because Python enables you to overwrite operators. This has nothing to do with an actual modulo operation, it's just used for simplicity. To learn more about operator overloading, take a look at [OOP](oop).
-
-#### Format Method
-```python
-"Python {}".format(101)
-```
-
-Here are some examples:
 
 ```python
 who = "I"
 version = 3
 
-print( who + " love Python " + str(version) )
-print( "%s love Python %s" % (who, version) )
-print( "{} love Python {}".format(who, version) )
+# F-Strings (preferred method)
 print( f"{who} love Python {version}" )
+
+# Making everything a string
+print( who + " love Python " + str(version) )
+
+# Modulo Operator
+print( "%s love Python %s" % (who, version) )
+
+# Format Method
+print( "{} love Python {}".format(who, version) )
 ```
 
 ```
@@ -176,8 +160,11 @@ I love Python 3
 I love Python 3
 I love Python 3
 ```
+
+Calculating `string % tuple` works because Python enables you to overwrite operators. This has nothing to do with an actual modulo operation, it's just used for simplicity. To learn more about operator overloading, take a look at [OOP](oop).
 
 ### Raw String Literals
+
 Raw String Literals, often called Raw Strings, are Strings in which `\`
 is interpreted as the actual `\` character.
 
@@ -191,6 +178,7 @@ print(s)
 ```
 
 ## Parse Numbers
+
 You can parse numbers from strings using the
 `int` and `float` methods:
 
@@ -212,6 +200,7 @@ ValueError: invalid literal for int() with base 10: 'hello'
 ```
 
 ## Special Operators
+
 Python provides some special operators:
 
 ```python
@@ -232,13 +221,9 @@ print(x)
 
 Note that there is no `x++` in Python; you need to use `x += 1`
 
-## 'Main' In Python
+## 'main()` In Python
+
 You probably know the `main()` method from other languages such as Java or C.
-Python, on the other hand, is primarily used for scripting, meaning there's a specific file
-to be run rather than a single executable program.
-By default, a Python file is executed from top to bottom, no matter whether this is the
-'main' file (the file started e.g. from the command line by using
-`python main.py`) or just a module imported by `main.py`
 
 If you want some part of a program only executed if it's the 'main' file, so the
 'entry point' to your program, you can check whether a certain variable called
@@ -259,12 +244,12 @@ this is the main file
 If you import this file from another file and execute the latter one, the code within the main of the imported file will not be executed.
 
 ## Exception Handling
+
 You probably already know Error or Exception Handling from other object-oriented programming languages.
 
-Generally, we differentiate between two types of errors: syntax errors and exceptions
-Syntax errors can - and must be - avoided, exceptions, on the other hand, have different
-origins.
-For example, you might ask the user for a number - you get the user's input in the form of a string. You then try to parse the string - however, before trying to parse a number from it you don't know whether the user entered a valid number or not.
+Generally, we differentiate between two types of errors: syntax errors and exceptions (altough they're still called __xxx__Error).
+
+**Syntax errors** must be avoided, **exceptions**, on the other hand, are often not avoidable: For example, you might ask the user for a number - you get the user's input in the form of a string. You then try to parse the string - however, before trying to parse a number from it you don't know whether the user entered a valid number or not.
 
 There's also a `finally` statement in Python which is used for clean-up
 actions like closing files. It's always executed, even when an exception occurred or you
@@ -281,9 +266,11 @@ finally:
 
 ```
 must be str, not int
+This will always be printed out
 ```
 
 If you want to raise (in other languages 'throw') an error, use the raise keyword:
+
 ```python
 raise ValueError("This a ValueError")
 ```
@@ -294,23 +281,3 @@ Traceback (most recent call last):
     raise ValueError("This a ValueError")
 ValueError: This a ValueError
 ```
-
-There's also a finally clause which will always be executed (unless you exit or kill
-the program).
-
-```python
-f = open("file.txt", "w")
-
-try:
-    # use file
-except EOFError:
-    # handle error appropriately
-finally:
-    # if the file is not closed yet, do so
-    if not f.closed():
-        f.close()
-
-```
-
-In this example the `with` context manager is probably a better option,
-as he automatically closes opened files; see [Working with Files](working_with_files)

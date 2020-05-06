@@ -3,13 +3,13 @@
 ## Opening & Closing Files
 The following code is probably pretty self-explanatory:
 using the `read()` function you get a file object
-(actually `TextIOWrapper`) and can then read the file's content
-- we will get more into that later.
+(actually `TextIOWrapper`) and can then read the file's content.
 
 Also, make sure to close the file after it is no longer needed.
 
 ```python
-# "r" opens the file in read-only mode
+# "r" opens the file in read-only mode, which is the default
+# use "w" to open it for writing (for all modes look at the docs)
 f = open("file.txt", "r")
 content = f.read()
 print(content)
@@ -25,7 +25,7 @@ As you can see, opening and closing files is quite simple and using the
 closes the file at the end of it:
 
 ```python
-with open("file.txt", "r") as f:
+with open("file.txt") as f:
     content = f.read()
     print(content)
     print(f"The file is {'closed' if f.closed else 'open'}")
@@ -64,7 +64,7 @@ f.read() -> str
 
 ### Read one line (till next linebreak)
 ```python
-{f.readline() -> str
+f.readline() -> str
 ```
 
 ### Read whole file as list of lines
@@ -99,7 +99,6 @@ It contains multiple lines,
 ['This is a text file.\n', 'It contains multiple lines,\n', 'as you can see.']
 ```
 
-`end=""` parameter of the `print()` function
-removes the `\n` that would usually be printed at the end of the line. 
+The `end=""` parameter of the `print()` function removes the `\n` that would usually be printed at the end of the line.
 As the read line already contains a line break, I didn't print the extra one from the
-`print()` function.
+`print()` function, too.

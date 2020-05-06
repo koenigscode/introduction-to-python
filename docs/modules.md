@@ -2,7 +2,8 @@
 
 ## Imports
 
-Once you've installed a module (or it's part of the standard library) you can easily import it using the import statement.
+Once you've installed a module (or it's part of the standard library) you can
+easily import it using the import statement.
 
 Let's consider numpy as an example:
 
@@ -24,22 +25,21 @@ You can then access the methods by simply saying
 
 ### Import *
 
-Newcomers often tend to use `from numpy import *` which
+Newcomers often tend to use `from some_package import *` extensively which
 enables you to use any method or object from the module without prefixing
 it with the module name at the front or importing it explicitly by using its name.
 
-However, using `from x import *` should be avoided
-as it pollutes your namespace, meaning you've got a problem if
-two or more modules have members with the same name.
+However, using `from x import *` should be avoided as it pollutes your namespace,
+meaning you've got a problem if two or more modules have members with the same name.
 
 Consider the following example:
 ```python
 """content of module_a.py:
-# some_var = 1
+some_var = 1
 """
 
 """content of module_b.py:
-# some_var = 0
+some_var = 0
 """
 
 from module_a import *  # better: import module_a as a
@@ -64,7 +64,7 @@ All the methods introduced above also work for submodules, so to use the pyplot 
 
 ## PIP
 
-pip is one of the most used package managers for Python and if you've got Python 3.4 or later
+pip is Python's package manager and if you've got Python 3.4 or later
 it's already installed on your system.
 
 Installing a new package/module is as simple as running
@@ -73,7 +73,7 @@ Installing a new package/module is as simple as running
 You should then be able to import the newly installed package in Python using the
 `import` statement.
 
-As an example, let's install [scikit-learn](https://scikit-learn.org/), a library for machine learning, and import it:
+As an example, let's install [scikit-learn](https://scikit-learn.org/), a library for machine learning and import it:
 ```bash
 $ pip install sklearn
 ```
