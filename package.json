@@ -17,6 +17,6 @@
   },
   "homepage": "https://github.com/koenigscode/introduction-to-python#readme",
   "devDependencies": {
-    "docsify": "^4.11.3"
+    "docsify": "^4.12.0"
   }
 }
